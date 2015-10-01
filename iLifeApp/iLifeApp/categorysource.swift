@@ -8,12 +8,13 @@
 
 import UIKit
 
-class categorysource{
+class categorysource {
     
     var category_id: String?
     var category_name: String?
     
-    
-    
-    
+    init(json:NSDictionary) {
+        self.category_id = json["id"] as? String
+        self.category_name = json["name"] as? String
+    }
 }

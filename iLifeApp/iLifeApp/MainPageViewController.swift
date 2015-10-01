@@ -12,6 +12,8 @@ class MainPageViewController: UITableViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    @IBOutlet var maintableview: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,10 +25,9 @@ class MainPageViewController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-        
-        
-        
     }
+    
+    
     
     
     

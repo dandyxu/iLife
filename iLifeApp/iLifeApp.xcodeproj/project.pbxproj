@@ -11,6 +11,8 @@
 		6C1AED1C1BBC7F4B00D8CDAD /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1AED1B1BBC7F4B00D8CDAD /* MainPageViewController.swift */; };
 		6C1AED1E1BBC7F6300D8CDAD /* DrawerMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1AED1D1BBC7F6300D8CDAD /* DrawerMenuController.swift */; };
 		6C1AED201BBC913D00D8CDAD /* categorysource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1AED1F1BBC913D00D8CDAD /* categorysource.swift */; };
+		6C1AED261BBD6DF900D8CDAD /* articlesource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1AED251BBD6DF900D8CDAD /* articlesource.swift */; };
+		6C1AED281BBD6F2C00D8CDAD /* usersource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1AED271BBD6F2C00D8CDAD /* usersource.swift */; };
 		6C2D72641BB9D62A00A572D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2D72631BB9D62A00A572D2 /* AppDelegate.swift */; };
 		6C2D72671BB9D62A00A572D2 /* iLifeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6C2D72651BB9D62A00A572D2 /* iLifeApp.xcdatamodeld */; };
 		6C2D72691BB9D62A00A572D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2D72681BB9D62A00A572D2 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		6C1AED1B1BBC7F4B00D8CDAD /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		6C1AED1D1BBC7F6300D8CDAD /* DrawerMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuController.swift; sourceTree = "<group>"; };
 		6C1AED1F1BBC913D00D8CDAD /* categorysource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categorysource.swift; sourceTree = "<group>"; };
+		6C1AED251BBD6DF900D8CDAD /* articlesource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = articlesource.swift; sourceTree = "<group>"; };
+		6C1AED271BBD6F2C00D8CDAD /* usersource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = usersource.swift; sourceTree = "<group>"; };
 		6C2D725E1BB9D62A00A572D2 /* iLifeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLifeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2D72621BB9D62A00A572D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C2D72631BB9D62A00A572D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				6C1AED1D1BBC7F6300D8CDAD /* DrawerMenuController.swift */,
 				6C1AED1B1BBC7F4B00D8CDAD /* MainPageViewController.swift */,
 				6C1AED1F1BBC913D00D8CDAD /* categorysource.swift */,
+				6C1AED251BBD6DF900D8CDAD /* articlesource.swift */,
+				6C1AED271BBD6F2C00D8CDAD /* usersource.swift */,
 			);
 			path = iLifeApp;
 			sourceTree = "<group>";
@@ -242,7 +248,9 @@
 				6C1AED1C1BBC7F4B00D8CDAD /* MainPageViewController.swift in Sources */,
 				6C1AED201BBC913D00D8CDAD /* categorysource.swift in Sources */,
 				6C2D72691BB9D62A00A572D2 /* ViewController.swift in Sources */,
+				6C1AED261BBD6DF900D8CDAD /* articlesource.swift in Sources */,
 				6C2D72641BB9D62A00A572D2 /* AppDelegate.swift in Sources */,
+				6C1AED281BBD6F2C00D8CDAD /* usersource.swift in Sources */,
 				6C1AED1E1BBC7F6300D8CDAD /* DrawerMenuController.swift in Sources */,
 				6C2D72671BB9D62A00A572D2 /* iLifeApp.xcdatamodeld in Sources */,
 				6C1AED1A1BBC7D3A00D8CDAD /* SWRevealViewController.m in Sources */,

@@ -10,6 +10,11 @@ import UIKit
 
 class usersource {
     
+    var id: String?
+    var name: String?
+    var is_manager: Int?
+    
+    
     
     
 }

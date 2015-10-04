@@ -15,7 +15,7 @@ class DrawerMenuController:UITableViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let urlPath = "http://212.111.41.144/mobile_get_category_list"
+        let urlPath = "http://ilife.ie/mobile_get_category_list"
         let url = NSURL(string:urlPath)
         if let JsonData = NSData(contentsOfURL: url!){
             if let json = NSJSONSerialization.JSONObjectWithData(JsonData, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
@@ -32,9 +32,21 @@ class DrawerMenuController:UITableViewController, UITableViewDataSource {
             }
         }
     }
-
+    
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        return 2
+//    }
+    
     //Return the number of category
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if section == 0 {
+//            return 1
+//        }
+//        
+//        if section == 1 {
+//            return categorysources.count
+//        }
+        //return categorysources.count + 1
         return categorysources.count
     }
     

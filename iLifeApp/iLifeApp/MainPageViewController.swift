@@ -8,28 +8,66 @@
 
 import UIKit
 
-class MainPageViewController: UITableViewController {
+class MainPageViewController: UITableViewController,UITableViewDataSource {
+    
+    @IBOutlet weak var ScrollView: UIWebView!
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     @IBOutlet var maintableview: UITableView!
+    
+    var articlesources = [articlesource]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Invoke action in RevealViewController to use drawer menu
         if self.revealViewController() != nil {
-            
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        //Grab website scrollview
+        let scrollViewUrlPath = "http://ilife.ie/mobile_slides"
+        let scrollUrl = NSURL(string:scrollViewUrlPath)
+        var scrollRequest = NSURLRequest(URL:scrollUrl!)
+        ScrollView.loadRequest(scrollRequest)
+        
+        //start get article list
+        let urlPath = "http://ilife.ie/mobile_get_article_list"
+        let url = NSURL(string:urlPath)
+        if let JsonData = NSData(contentsOfURL: url!){
+            if let json = NSJSONSerialization.JSONObjectWithData(JsonData, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSArray {
+                if let articleArray = json as? [NSDictionary] {
+                    for item in articleArray {
+                        articlesources.append(articlesource(json:item))
+                        //println(item["image_url"])
+                    }
+                }
+            }
+        }
     }
     
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return articlesources.count
+    }
     
-    
-    
-    
-    
-    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCellWithIdentifier("maincell", forIndexPath: indexPath) as! ArticleTableViewCell
+        
+        //Load title of each tableview cell
+        cell.title?.text = articlesources[indexPath.row].article_title
+        
+        //Load title icon at the left of each tableview cell
+        var article_icon_url = "http://ilife.ie/\(articlesources[indexPath.row].article_icon!)"
+//        cell.title_icon?.image = UIImage(data: NSData(contentsOfURL: NSURL(string:article_icon_url)!)!)
+        var url = NSURL(string:article_icon_url)
+        let data = NSData(contentsOfURL: url!)
+        cell.title_icon?.image = UIImage(data: data!)
+        
+        //Load create time at the left of each tableview cell
+        cell.created_at?.text = articlesources[indexPath.row].created_at
+        return cell
+    }
 }

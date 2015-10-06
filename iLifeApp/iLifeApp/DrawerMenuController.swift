@@ -20,33 +20,34 @@ class DrawerMenuController:UITableViewController, UITableViewDataSource {
         if let JsonData = NSData(contentsOfURL: url!){
             if let json = NSJSONSerialization.JSONObjectWithData(JsonData, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
 //                println(json["data"])
-                
                 if let categoryArray = json["data"] as? [NSDictionary] {
 //                    println(categoryArray)
                     for item in categoryArray {
 //                        println(item)
                         categorysources.append(categorysource(json:item))
-                        
                     }
                 }
             }
         }
     }
     
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        return 2
-//    }
+    //return the number of section
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
     
     //Return the number of category
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if section == 0 {
+//        switch section {
+//        case 0:
 //            return 1
-//        }
-//        
-//        if section == 1 {
+//        case 1:
 //            return categorysources.count
+//        default:
+//            assert(false, "section \(section)")
+//            return 0
 //        }
-        //return categorysources.count + 1
+
         return categorysources.count
     }
     

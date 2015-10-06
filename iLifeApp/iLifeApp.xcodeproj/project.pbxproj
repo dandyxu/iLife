@@ -22,6 +22,8 @@
 		6C2D727D1BB9D62A00A572D2 /* iLifeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2D727C1BB9D62A00A572D2 /* iLifeAppTests.swift */; };
 		6CDBF1CA1BBEB47D00472A26 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBF1C91BBEB47D00472A26 /* LoginViewController.swift */; };
 		6CDBF1CC1BBEC38A00472A26 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBF1CB1BBEC38A00472A26 /* RegisterViewController.swift */; };
+		6CDBF1CE1BC2DB7700472A26 /* ArticleDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBF1CD1BC2DB7700472A26 /* ArticleDetailPageViewController.swift */; };
+		6CDBF1D01BC3DC2D00472A26 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBF1CF1BC3DC2D00472A26 /* ArticleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		6C2D727C1BB9D62A00A572D2 /* iLifeAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iLifeAppTests.swift; sourceTree = "<group>"; };
 		6CDBF1C91BBEB47D00472A26 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6CDBF1CB1BBEC38A00472A26 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		6CDBF1CD1BC2DB7700472A26 /* ArticleDetailPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDetailPageViewController.swift; sourceTree = "<group>"; };
+		6CDBF1CF1BC3DC2D00472A26 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 				6C2D72611BB9D62A00A572D2 /* Supporting Files */,
 				6C1AED1D1BBC7F6300D8CDAD /* DrawerMenuController.swift */,
 				6C1AED1B1BBC7F4B00D8CDAD /* MainPageViewController.swift */,
+				6CDBF1CF1BC3DC2D00472A26 /* ArticleTableViewCell.swift */,
+				6CDBF1CD1BC2DB7700472A26 /* ArticleDetailPageViewController.swift */,
 				6CDBF1C91BBEB47D00472A26 /* LoginViewController.swift */,
 				6CDBF1CB1BBEC38A00472A26 /* RegisterViewController.swift */,
 				6C1AED1F1BBC913D00D8CDAD /* categorysource.swift */,
@@ -252,12 +258,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C1AED1C1BBC7F4B00D8CDAD /* MainPageViewController.swift in Sources */,
+				6CDBF1D01BC3DC2D00472A26 /* ArticleTableViewCell.swift in Sources */,
 				6CDBF1CC1BBEC38A00472A26 /* RegisterViewController.swift in Sources */,
 				6C1AED201BBC913D00D8CDAD /* categorysource.swift in Sources */,
 				6C2D72691BB9D62A00A572D2 /* ViewController.swift in Sources */,
 				6C1AED261BBD6DF900D8CDAD /* articlesource.swift in Sources */,
 				6C2D72641BB9D62A00A572D2 /* AppDelegate.swift in Sources */,
 				6C1AED281BBD6F2C00D8CDAD /* usersource.swift in Sources */,
+				6CDBF1CE1BC2DB7700472A26 /* ArticleDetailPageViewController.swift in Sources */,
 				6C1AED1E1BBC7F6300D8CDAD /* DrawerMenuController.swift in Sources */,
 				6C2D72671BB9D62A00A572D2 /* iLifeApp.xcdatamodeld in Sources */,
 				6CDBF1CA1BBEB47D00472A26 /* LoginViewController.swift in Sources */,

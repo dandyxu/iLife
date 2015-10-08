@@ -3,4 +3,6 @@
 Homestead.yaml
 Homestead.json
 .env
+.idea/blade.xml
 .idea/*
+/public/images/articles/

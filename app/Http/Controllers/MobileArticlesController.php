@@ -151,8 +151,9 @@ class MobileArticlesController extends Controller
         $articles = DB::table('articles')
             ->select('articles.id as article_id', 'articles.title','articles.is_top',
                 'images.image_url', 'articles.created_at', 'articles.updated_at')
-            ->join('images', 'images.article_id', '=', 'articles.id')
-            ->whereRaw('images.id = 3 * articles.id')
+            ->Leftjoin('images', 'images.article_id', '=', 'articles.id')
+            ->where('images.image_url', 'like', '%title_icon%')
+            ->orWhere('image_url', null)
             ->get();
         return json_encode($articles);
     }
@@ -163,7 +164,6 @@ class MobileArticlesController extends Controller
      * @return string
      */
     public function articleDetails(Request $request){
-
         $article = Article::find($request->article_id);
         if(is_null($article)){
             $result = Array(
@@ -177,8 +177,15 @@ class MobileArticlesController extends Controller
             $article_image = DB::table('images')
                 ->where('article_id', $request->article_id)
                 ->get();
-            $article_title_image = $article_image[0]->image_url;
-            $article_body_image = $article_image[1]->image_url;
+
+            // Check whether the article image is null
+            if(sizeof($article_image) != 0){
+                $article_title_image = $article_image[0]->image_url;
+                $article_body_image = $article_image[1]->image_url;
+            } else{
+                $article_title_image = null;
+                $article_body_image = null;
+            }
             $article_details = Array(
                 'user_id'       => $article->user_id,
                 'title'         => $article->title,

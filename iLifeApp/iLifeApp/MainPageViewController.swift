@@ -60,14 +60,28 @@ class MainPageViewController: UITableViewController,UITableViewDataSource {
         cell.title?.text = articlesources[indexPath.row].article_title
         
         //Load title icon at the left of each tableview cell
-        var article_icon_url = "http://ilife.ie/\(articlesources[indexPath.row].article_icon!)"
+        if let article_icon_url = articlesources[indexPath.row].article_icon {
+            let article_icon_url_whole = "http://ilife.ie/\(articlesources[indexPath.row].article_icon!)"
+            var url = NSURL(string:article_icon_url_whole)
+            let data = NSData(contentsOfURL: url!)
+            cell.title_icon?.image = UIImage(data: data!)
+        }else
+        {
+            cell.title_icon?.image = UIImage(named:"title_icon_default.png")
+        }
 //        cell.title_icon?.image = UIImage(data: NSData(contentsOfURL: NSURL(string:article_icon_url)!)!)
-        var url = NSURL(string:article_icon_url)
-        let data = NSData(contentsOfURL: url!)
-        cell.title_icon?.image = UIImage(data: data!)
         
         //Load create time at the left of each tableview cell
         cell.created_at?.text = articlesources[indexPath.row].created_at
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowArticleDetail" {
+            let detailViewController = segue.destinationViewController as? ArticleDetailViewController
+            let myIndexPath = self.maintableview.indexPathForSelectedRow()
+            let row = myIndexPath?.row
+            detailViewController?.article_id_detail = articlesources[row!].article_id!
+        }
     }
 }

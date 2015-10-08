@@ -14,7 +14,4 @@ class usersource {
     var name: String?
     var is_manager: Int?
     
-    
-    
-    
 }

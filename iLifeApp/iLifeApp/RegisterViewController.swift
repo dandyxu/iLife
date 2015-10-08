@@ -92,7 +92,8 @@ class RegisterViewController:UIViewController, UITextFieldDelegate {
     
     //validate email address format
     func isValidEmail(emailStr:String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        let emailRegEx = "^\\w+(\\.\\w+)*@\\w+(\\.\\w+)+$"
+//        let emailRegEx = "^w+(.w+)*@w+(.w+)+$"
         let range = emailStr.rangeOfString(emailRegEx, options:.RegularExpressionSearch)
         let result = range != nil ? true:false
         return result

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JJc-1g-dfc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UwE-uT-sjF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -78,6 +78,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1u-7b-yR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1196" y="-354"/>
+        </scene>
+        <!--Category Article View Controller-->
+        <scene sceneID="65O-3U-gB2">
+            <objects>
+                <viewController id="6yq-gW-VuH" customClass="CategoryArticleViewController" customModule="iLifeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PD3-HI-wiO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoryList" id="DPs-H9-s8X">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DPs-H9-s8X" id="1LP-gC-34i">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6yq-gW-VuH" id="pw0-eO-Hd0"/>
+                            <outlet property="delegate" destination="6yq-gW-VuH" id="qcq-3U-MTi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ah0-Pq-Dw2">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="Wwr-0Y-W1b"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="Wwr-0Y-W1b" id="qEA-gu-NuT"/>
+                        <outlet property="view" destination="PD3-HI-wiO" id="OhB-eH-R4y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F2b-Nd-6UZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1191" y="632"/>
         </scene>
         <!--Article Detail View Controller-->
         <scene sceneID="Ddk-p5-BRP">
@@ -226,11 +259,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="mM4-16-LtA">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MainPageCell" id="mM4-16-LtA">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mM4-16-LtA" id="3zp-hL-sHR">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="5p1-0h-cyC" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="0ba-1e-CQE"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="wWv-th-NnV" customClass="CategoryTableViewCell" customModule="iLifeApp" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wWv-th-NnV" id="gfT-Od-97G">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="1bg-h1-gc8" kind="custom" identifier="CategoryDetail" customClass="SWRevealViewControllerSeguePushController" id="XN9-Yu-4a0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -238,6 +283,9 @@
                             <outlet property="delegate" destination="03U-gB-zaO" id="cCN-4R-xgf"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="CategoryMainTableView" destination="TjJ-bH-h6Q" id="8qH-Hz-dkL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbO-Im-SnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -517,11 +565,30 @@
             </objects>
             <point key="canvasLocation" x="-1321" y="261"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qSZ-1N-krG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1bg-h1-gc8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mbQ-Uq-DJm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6yq-gW-VuH" kind="relationship" relationship="rootViewController" id="be3-po-yOV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nLb-MA-kbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="366" y="632"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="0ba-1e-CQE"/>
         <segue reference="faH-kA-PhG"/>
     </inferredMetricsTieBreakers>
 </document>

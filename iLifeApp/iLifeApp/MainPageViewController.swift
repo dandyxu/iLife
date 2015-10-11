@@ -67,7 +67,7 @@ class MainPageViewController: UITableViewController,UITableViewDataSource {
             cell.title_icon?.image = UIImage(data: data!)
         }else
         {
-            cell.title_icon?.image = UIImage(named:"title_icon_default.png")
+            cell.title_icon?.image = UIImage(named: "title_icon_default.png")
         }
 //        cell.title_icon?.image = UIImage(data: NSData(contentsOfURL: NSURL(string:article_icon_url)!)!)
         

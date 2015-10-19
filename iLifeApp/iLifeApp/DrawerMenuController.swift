@@ -22,12 +22,13 @@ class DrawerMenuController:UITableViewController, UITableViewDataSource {
         let url = NSURL(string:urlPath)
         if let JsonData = NSData(contentsOfURL: url!){
             if let json = NSJSONSerialization.JSONObjectWithData(JsonData, options: NSJSONReadingOptions.MutableContainers, error: nil) as? NSDictionary {
-//                println(json["data"])
+//                println(json)
                 if let categoryArray = json["data"] as? [NSDictionary] {
 //                    println(categoryArray)
                     for item in categoryArray {
 //                        println(item)
                         categorysources.append(categorysource(json:item))
+//                        println(categorysource(json:item))
                     }
                 }
             }
@@ -53,7 +54,7 @@ class DrawerMenuController:UITableViewController, UITableViewDataSource {
     
     //Ask the tableview for a reusable cell for the given identifier
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = UITableViewCell()
+        var cell = UITableViewCell()
         
         if (indexPath.section == 0) {
             cell = tableView.dequeueReusableCellWithIdentifier("MainPageCell", forIndexPath:indexPath) as! UITableViewCell
@@ -62,6 +63,7 @@ class DrawerMenuController:UITableViewController, UITableViewDataSource {
             if (indexPath.section == 1) {
                 cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
                 cell.textLabel?.text = categorysources[indexPath.row].category_name
+//                println(categorysources[indexPath.row].category_name)
             }
         }
         return cell
@@ -71,13 +73,13 @@ class DrawerMenuController:UITableViewController, UITableViewDataSource {
         if segue.identifier == "CategoryDetail" {
 //            var cell = sender as! UITableViewCell
 //            let IndexPath = self.CategoryMainTableView.indexPathForCell(cell)
+            
             //Embed in Navigation controller
             let detailViewController = segue.destinationViewController as? UINavigationController
             let categoryViewController = detailViewController?.topViewController as! CategoryArticleViewController
             var IndexPath = self.CategoryMainTableView.indexPathForSelectedRow()
             let row = IndexPath?.row
             categoryViewController.category_id_detail = categorysources[row!].category_id!
-            
         }
     }
 }

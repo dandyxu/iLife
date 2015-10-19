@@ -10,6 +10,8 @@
 	<string>iLifeApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
+		<string>github.com:SwiftyJSON/SwiftyJSON.git</string>
 		<key>D37258E75F9855CBD471044E4C945129BBA10715</key>
 		<string>github.com:dandyxu/iLife.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>iLifeApp/iLifeApp.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
+		<string>../../../iLifeApp/SwiftyJSON-Swift2.0</string>
 		<key>D37258E75F9855CBD471044E4C945129BBA10715</key>
 		<string>../../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>D37258E75F9855CBD471044E4C945129BBA10715</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iLife</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiftyJSON-Swift2.0</string>
 		</dict>
 	</array>
 </dict>

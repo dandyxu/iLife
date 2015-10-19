@@ -18,8 +18,18 @@ class MainPageViewController: UITableViewController,UITableViewDataSource {
     
     var articlesources = [articlesource]()
     
+    var refresher: UIRefreshControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Pull to refresh
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string:"Pull to refresh!")
+        refresher.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.maintableview.addSubview(refresher)
+        
+        refresh()
         
         //Invoke action in RevealViewController to use drawer menu
         if self.revealViewController() != nil {
@@ -34,6 +44,11 @@ class MainPageViewController: UITableViewController,UITableViewDataSource {
         var scrollRequest = NSURLRequest(URL:scrollUrl!)
         ScrollView.loadRequest(scrollRequest)
         
+  
+
+    }
+    
+    func refresh(){
         //start get article list
         let urlPath = "http://ilife.ie/mobile_get_article_list"
         let url = NSURL(string:urlPath)
@@ -47,6 +62,7 @@ class MainPageViewController: UITableViewController,UITableViewDataSource {
                 }
             }
         }
+        self.refresher.endRefreshing()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{

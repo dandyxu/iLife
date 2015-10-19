@@ -22,6 +22,8 @@ class ArticleDetailViewController: UIViewController {
     
     var article_id_detail:Int!
     
+    var refresher: UIRefreshControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +32,8 @@ class ArticleDetailViewController: UIViewController {
 //            let urlRequest = NSURLRequest(URL:webURL!)
 //            webSiteView.loadRequest(urlRequest)
 //        }
+        
+        
         
         let article_urlPath = "http://ilife.ie/mobile_article_details"
         let request = NSMutableURLRequest(URL:NSURL(string: article_urlPath)!)
@@ -100,5 +104,4 @@ class ArticleDetailViewController: UIViewController {
         var data = NSData(contentsOfURL: url!)
         return data!
     }
-    
 }
